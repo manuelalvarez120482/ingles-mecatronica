@@ -96,3 +96,14 @@ button.card small { color: #3a4f6d; }
 .rules li { margin: 6px 0; }
 input[type=range] { width: 100%; }
 .mic { font-size: 18px; padding: 18px; }
+
+/* ilustraciones */
+.art { width: 100%; height: 100%; display: block; }
+.art .y { stroke: #ffe98a; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+.art path:not([class]), .art .y:not([class*=" "]) { fill: none; }
+.art path.y:not(.f):not(.k):not(.r):not(.g):not(.b):not(.d):not(.w) { fill: none; }
+.art .f { fill: #cfd6df; } .art .k { fill: #ffe98a; } .art .r { fill: #e5484d; } .art .g { fill: #3ecf8e; }
+.art .b { fill: #4da3ff; } .art .d { fill: #0f2a52; } .art .w { fill: #fff; }
+.art .tw { fill: #fff; font-family: var(--heavy); } .art .tk { fill: #ffe98a; font-family: var(--heavy); } .art .tn { fill: #0b1d3a; font-family: var(--heavy); }
+.vthumb { flex: none; width: 56px; height: 56px; background: #14305c; border-radius: 12px; border: 1px solid rgba(255,233,138,.35); padding: 3px; }
+.flash.back .art.big, .flash .art.big { width: 120px; height: 120px; margin: 0 auto 8px; background: #14305c; border-radius: 18px; padding: 6px; border: 2px solid var(--yellow); }

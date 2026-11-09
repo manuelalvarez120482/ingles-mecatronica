@@ -345,7 +345,7 @@ function renderUnit(id) {
     <h3>Vocabulario (${u.vocab.length})</h3>
     <p class="muted">Toca 🔊 para escuchar y 🐢 para escuchar despacio. Las palabras con <span class="techtag">TEC</span> son de mecatrónica y sistemas embebidos.</p>
     <div class="vlist">${u.vocab.map(v => `<div class="vrow ${v.tech ? "tech" : ""}">
-      <div class="vmain"><span class="ven">${esc(v.en)}</span>${v.tech ? '<span class="techtag">TEC</span>' : ""}<span class="ves">${esc(v.es)}</span>
+      ${art(v.en) ? `<div class="vthumb">${art(v.en)}</div>` : ""}<div class="vmain"><span class="ven">${esc(v.en)}</span>${v.tech ? '<span class="techtag">TEC</span>' : ""}<span class="ves">${esc(v.es)}</span>
       <span class="vex">${esc(v.ex)}</span></div>${audioBtns(v.en)}</div>`).join("")}</div>
     <h3>Diálogo</h3>
     <div class="card">${u.dialogue.map(d => `<div class="dline"><strong>${esc(d[0])}:</strong> ${esc(d[1])}<br><span class="exes">${esc(d[2])}</span>${audioBtns(d[1])}</div>`).join("")}</div>
@@ -570,7 +570,7 @@ function runCards(queue, extra) {
     document.getElementById("flip").onclick = () => {
       document.getElementById("flip").remove();
       document.getElementById("ans").innerHTML =
-        `<div class="flash back"><div class="fword">${dir === "en" ? esc(v.es) : esc(v.en)}</div>
+        `<div class="flash back">${art(v.en, true)}<div class="fword">${dir === "en" ? esc(v.es) : esc(v.en)}</div>
           <p>${esc(v.ex)}<br><span class="exes">${esc(v.exEs)}</span></p><div class="audiorow">${audioBtns(dir === "en" ? v.ex : v.en)}</div></div>
          <div class="two"><button class="danger" id="no">No la sabía</button><button class="primary" id="yes">Sí la sabía</button></div>`;
       if (dir === "es") say(v.en, false);
